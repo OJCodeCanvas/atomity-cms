@@ -470,8 +470,8 @@ class ContentApiTest extends IntegrationTest {
 
     @Test
     void docsDefaultSortingRemainsUnchangedWhenSortIsOmitted() throws Exception {
-        createAndPublishDoc("First Published", "first-published", 10);
-        createAndPublishDoc("Second Published", "second-published", 1);
+        createAndPublishDoc("First Published", "first-published", 1);
+        createAndPublishDoc("Second Published", "second-published", 10);
 
         // Default is publishedAt DESC, so Second Published comes first despite higher order
         mockMvc.perform(get("/api/v1/content/docs"))
